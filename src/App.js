@@ -1,25 +1,15 @@
-import React, {} from "react";
-import "./App.css"
-import Boat from "./components/Boat"
-import NavBar from "./components/Navbar"
-import Rent from "./components/Rent"
-import About from "./components/About"
+import React, { } from "react";
+import "./CSS/App.css"
+import Boat from "./Components/Boat_Page"
+import BoatId from "./Components/BoatId"
+import NavBar from "./Components/Navbar"
+import Rent from "./Components/Rent"
+import About from "./Components/About"
 import { Route, Routes } from "react-router-dom"
 import rawData from "./mock-data.json"
 
 
 
-
-
-const mapBoat = rawData.map(item =>{
-  return(
-      <Boat
-      key={item.id}
-      item={item}
-      />
-  )
-
-})
 
 const App = () => {
 
@@ -27,13 +17,12 @@ const App = () => {
   return (
     <div>
       <NavBar/>
-      <div className="container">
         <Routes>
           <Route path="/about" element={<About/>}/>
-          <Route path="/boat" element={mapBoat}/>
+          <Route path="/boat" element={<Boat/>}/>
+          <Route path="/boat/:id" element={<BoatId/>}/>
           <Route path="/rent" element={<Rent/>}/>
         </Routes>
-      </div>
     </div>
 
 
